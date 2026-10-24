@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello World</title>
+</head>
+<body>
+    <h1>Joke of the moment</h1>
+    <p id="setup">Loading...</p>
+    <p id="punchline"></p>
+    <button id="reload">Another one</button>
+
+    <script>
+        async function loadJoke() {
+            const response = await fetch('/api/nhle');
+            const joke = await response.json();
+            document.getElementById('setup').textContent = joke.setup;
+            document.getElementById('punchline').textContent = joke.punchline;
+        }
+
+        document.getElementById('reload').addEventListener('click', loadJoke);
+        loadJoke();
+    </script>
+</body>
+</html>

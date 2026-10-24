@@ -1,4 +1,4 @@
-package ca.irwinanthony.nhl_stat_predictor;
+package ca.anthonyirwin.nhl_stat_predictor;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
